@@ -19,27 +19,9 @@ public class CalculadoraDescuentos {
             String[] productosEnCarrito = new String[10];
             double[] preciosEnCarrito = new double[10];
             int[] cantidadesPorProducto = new int[10];
-            int cantidadProductos = 0;
+            int cantidadProductos = hacerLaCompra(productosEnCarrito, preciosEnCarrito, cantidadesPorProducto)
 			
-			
-            System.out.println("Carrito de Compra");
-            while(cantidadProductos < 10) {
-                System.out.print("Nombre del producto (o 'fin' para terminar): ");
-                String nombre = scanner.nextLine();
-                if (nombre.equalsIgnoreCase("fin")) {
-                    break;
-                }
-                productosEnCarrito[cantidadProductos] = nombre;
-                
-                System.out.print("Precio de '" + nombre + "': ");
-                preciosEnCarrito[cantidadProductos] = scanner.nextDouble();
-                
-                System.out.print("Cantidad de '" + nombre + "': ");
-                cantidadesPorProducto[cantidadProductos] = scanner.nextInt();
-                scanner.nextLine(); 
-
-                cantidadProductos++;
-            }
+            
 
             if(cantidadProductos == 0){
                 System.out.println("Carrito vacio, no se puede calcular el descuento.");
@@ -105,5 +87,26 @@ public class CalculadoraDescuentos {
 		}
 		
 		return descuento;
+	}
+	
+	private int hacerLaCompra(String[] productosEnCarrito, double[] preciosEnCarrito, int[] cantidadesPorProducto ) {
+		int cantidadProductos = 0;
+		System.out.println("Carrito de Compra");
+		string nombre = "";
+        while(cantidadProductos < 10 && !nombre.equalsIgnoreCase("fin")) {
+            System.out.print("Nombre del producto (o 'fin' para terminar): ");
+            nombre = scanner.nextLine();	
+            productosEnCarrito[cantidadProductos] = nombre;
+            
+            System.out.print("Precio de '" + nombre + "': ");
+            preciosEnCarrito[cantidadProductos] = scanner.nextDouble();
+            
+            System.out.print("Cantidad de '" + nombre + "': ");
+            cantidadesPorProducto[cantidadProductos] = scanner.nextInt();
+            scanner.nextLine(); 
+
+            cantidadProductos++;
+        }
+		return cantidadProductos;
 	}
 }
