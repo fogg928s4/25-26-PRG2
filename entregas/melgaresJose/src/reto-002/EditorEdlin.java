@@ -3,7 +3,7 @@ import java.util.Scanner;
 class EditorEdlin {
     public static void main(String[] args) {
         final int BUFFER_SIZE = 10;
-        final int LINEA_ACTIVA_INICIAL = 1;
+        final int LINEA_ACTIVA_INICIAL = 0;
         
         String[] buffer = new String[BUFFER_SIZE];
         int lineaActiva = LINEA_ACTIVA_INICIAL;
