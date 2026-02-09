@@ -2,17 +2,26 @@ import java.util.Scanner;
 
 class EditorEdlin {
     public static void main(String[] args) {
-        int opcion = 0;
+        final int BUFFER_SIZE = 10;
+        final int LINEA_ACTIVA_INICIAL = 1;
+        
+        String[] buffer = new String[BUFFER_SIZE];
+        int lineaActiva = LINEA_ACTIVA_INICIAL;
+        
+        int opcion;
+
         imprimirMenuIncial();
-        String[] buffer = new String[10];
-        limpiarBuffer(buffer);
-        int lineaActiva = 3;
-        while (opcion != 4) {
+        inicializarBuffer(buffer);
+        do {
             opcion = leerComando();
             ejecutarComando(opcion, buffer, lineaActiva);
             imprimirEditor(buffer, lineaActiva);
             imprimirBarraOpciones();
-        }
+        } while (opcion != 4);
+    }
+
+    private static void ejecutarEditor(String[] buffer, int lineaActiva) {
+
     }
 
     private static void imprimirEditor(String[] buffer, int lineaActiva) {
@@ -26,7 +35,7 @@ class EditorEdlin {
         imprimirBorde();
     }
 
-    private static void limpiarBuffer(String[] buffer) {
+    private static void inicializarBuffer(String[] buffer) {
         for (int i = 0; i < buffer.length; i++) {
             buffer[i] = "~";
         }
@@ -55,7 +64,9 @@ class EditorEdlin {
     private static int leerComando() {
         Scanner scanner = new Scanner(System.in);
         String comando = scanner.nextLine();
-        return mapearComando(comando);
+        int numeroComando = mapearComando(comando);
+        scanner.close();
+        return numeroComando;
     }
 
     private static int mapearComando(String comando) {
@@ -74,7 +85,7 @@ class EditorEdlin {
             case 0 -> lineaActiva = cambiarLineaActiva();
             case 1 -> editarLineaActiva(buffer, lineaActiva);
             case 2 -> intercambiarLineas(buffer);
-            case 3 -> limpiarBuffer(buffer);
+            case 3 -> inicializarBuffer(buffer);
             case 4 -> salir();
         }
     }
