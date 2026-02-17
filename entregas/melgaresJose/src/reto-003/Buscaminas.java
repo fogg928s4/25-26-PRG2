@@ -1,5 +1,6 @@
 import java.util.Scanner;
-public class buscaminas{
+
+public class Buscaminas{
 	public static void main(String[] args){
 	
 	int minas=0;
