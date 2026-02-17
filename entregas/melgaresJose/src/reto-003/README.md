@@ -7,3 +7,7 @@ Esta rama incluye los cambios hechos para la refactorización del código de [Bu
 ### 🔨 FIX: Cambio de nombre de clase
 
 El primer cambio fue el nombre de la clase de `buscaminas` a `Buscaminas`. Siguiendo así la convención de nomenclatura.
+
+### 🔨 FIX: Indentación
+
+Se mejora la indentación y formato para una mejor lectura.
