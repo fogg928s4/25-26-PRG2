@@ -8,10 +8,6 @@ public class Buscaminas {
         final int NUMERO_COLUMNAS = 7;
         int minas = 0;
         int celdasVacias = 0;
-        int posa = 0;
-        int posb = 0;
-        int posc = 0;
-        int posd = 0;
         int posx = 0;
         int posy = 0;
         boolean salida = false;

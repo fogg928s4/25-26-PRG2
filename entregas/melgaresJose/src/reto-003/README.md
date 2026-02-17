@@ -29,3 +29,7 @@ Los bucles consecutivos que se utilizaban para colocar las minas en su posición
 Este refactor pretende cambiar la forma en la que el campo minado y el tablero de juego interactuán. Para ambos se han creado métodos estáticos para inicializarlos respectivamente. A su vez, el campo minado (anteriormente `tablero`) ha sido cambiado por una matriz de tipo **entero**. Por su parte, el tablero de juego (antes `tablero2`) se mantiene como una matriz de **String**. 
 
 Otro cambio importante, es que se han quitado los números de posición de ambos tableros.
+
+### 🔨 FIX: Eliminar variables innecesarias
+
+Se eliminaron variables innecesarias.
