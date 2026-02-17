@@ -6,8 +6,10 @@ public class Buscaminas {
     public static void main(String[] args) {
         final int NUMERO_FILAS = 5;
         final int NUMERO_COLUMNAS = 7;
-        int minas = 0;
-        int celdasVacias = 0;
+        final String MARCA_MINA_ENCONTRADA = " | ";
+        final String EXPLOSION = "***";
+        int minasExplotadas = 0;
+        int celdasLimpiadas = 0;
         int posx = 0;
         int posy = 0;
         boolean salida = false;
@@ -23,45 +25,27 @@ public class Buscaminas {
         while (!salida) {
             
             imprimirTablero(tableroJuego);
-            for (int x = 0; x < tableroJuego.length; x++) {
-                System.out.print("|");
-                for (int y = 0; y < 8; y++) {
-
-                    System.out.print(tableroJuego[x][y]);
-                }
-                System.out.println("|");
-            }
 
             System.out.println("introduzca posicion X");
-            
             posx = scanner.nextInt();
 
             System.out.println("Introduzca posicion Y");
             posy = scanner.nextInt();
 
             if ((campoMinado[posx][posy]) == 0) {
-                tableroJuego[posx][posy] = "--";
-                celdasVacias++;
+                tableroJuego[posx][posy] = MARCA_MINA_ENCONTRADA ;
+                celdasLimpiadas++;
             } else {
-                tableroJuego[posx][posy] = "**";
-                minas++;
+                tableroJuego[posx][posy] = EXPLOSION;
+                minasExplotadas++;
             }
 
-            for (int x = 0; x < tableroJuego.length; x++) {
-                System.out.print("|");
-                for (int y = 0; y < 8; y++) {
-
-                    System.out.print(tableroJuego[x][y]);
-                }
-                System.out.println("|");
-            }
-
-            if (minas == 3) {
+            if (minasExplotadas == 3) {
                 System.out.println("Lo siento, ha perdido");
                 salida = true;
             }
 
-            if (celdasVacias == 30) {
+            if (celdasLimpiadas == 30) {
                 System.out.println("Enhorabuena, ha ganado");
                 salida = true;
             }
