@@ -31,50 +31,8 @@ public class Buscaminas {
             {" 4", "  ", "  ", "  ", "  ", "  ", "  ", "  "},
             {" 5", "  ", "  ", "  ", "  ", "  ", "  ", "  "}
         };
-    
-        posa = (int) ((Math.random() * 5) + 1);
-        posb = (int) ((Math.random() * 7) + 1);
-        for (int x = 1; x < tablero.length; x++) {
-            for (int y = 1; y < 8; y++) {
 
-                tablero[posa][posb] = "MM";
-            }
-        }
-
-        posa = (int) ((Math.random() * 5) + 1);
-        posb = (int) ((Math.random() * 7) + 1);
-        for (int x = 1; x < tablero.length; x++) {
-            for (int y = 1; y < 8; y++) {
-
-                tablero[posa][posb] = "MM";
-            }
-        }
-
-        posa = (int) ((Math.random() * 5) + 1);
-        posb = (int) ((Math.random() * 7) + 1);
-        for (int x = 1; x < tablero.length; x++) {
-            for (int y = 1; y < 8; y++) {
-
-                tablero[posa][posb] = "MM";
-            }
-        }
-
-        posa = (int) ((Math.random() * 5) + 1);
-        posb = (int) ((Math.random() * 7) + 1);
-        for (int x = 1; x < tablero.length; x++) {
-            for (int y = 1; y < 8; y++) {
-
-                tablero[posa][posb] = "MM";
-            }
-        }
-        posa = (int) ((Math.random() * 5) + 1);
-        posb = (int) ((Math.random() * 7) + 1);
-        for (int x = 1; x < tablero.length; x++) {
-            for (int y = 1; y < 8; y++) {
-
-                tablero[posa][posb] = "MM";
-            }
-        }
+        colocarMinas(tablero);
 
         while (!salida) {
 
@@ -124,5 +82,20 @@ public class Buscaminas {
 
         }
 
+    }
+
+    private static void colocarMinas(String[][] tablero) {
+        final int CANTIDAD_MINAS = 5;
+        int posicionXMina;
+        int posicionYMina;
+        for(int i = 1 ; i <= CANTIDAD_MINAS; i++){
+            posicionXMina = obtenerNumeroAleatorio(tablero[0].length);
+            posicionYMina = obtenerNumeroAleatorio(tablero.length);
+            tablero[posicionYMina][posicionXMina] = "MM";
+        }
+    }
+
+    private static int obtenerNumeroAleatorio(int maximo) {
+        return (int) ((Math.random() * maximo) + 1);
     }
 }

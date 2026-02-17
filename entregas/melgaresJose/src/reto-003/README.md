@@ -19,3 +19,7 @@ Se han refactorizado la declaración de los valores de las matrices, por una for
 ### 🔨 FIX: Comentarios innecesarios
 
 Elimina comentarios innecesarios dentro del código intentando justificar malas prácticas.
+
+### 🛟 REFACTOR: Colocar Minas
+
+Los bucles consecutivos que se utilizaban para colocar las minas en su posición inicial han sido removidos, y se han reemplazado por un método estático `colocarMinas`. Este realiza un ciclo según la cantidad de minas y les da una posición **X** e **Y** de manera aleatoria.
