@@ -15,3 +15,7 @@ Se mejora la indentación y formato para una mejor lectura.
 ### 🛟 REFACTOR: Declaración de matrices de tableros
 
 Se han refactorizado la declaración de los valores de las matrices, por una forma más legible. En vez de declarar cada elemento individualmente por su índice, se declaran dentro de la notación de **llaves** para arreglos y matrices.
+
+### 🔨 FIX: Comentarios innecesarios
+
+Elimina comentarios innecesarios dentro del código intentando justificar malas prácticas.
