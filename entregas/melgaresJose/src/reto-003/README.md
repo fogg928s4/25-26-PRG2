@@ -33,3 +33,7 @@ Otro cambio importante, es que se han quitado los números de posición de ambos
 ### 🔨 FIX: Eliminar variables innecesarias
 
 Se eliminaron variables innecesarias.
+
+### 🥖 FEAT: Método para imprimir tablero
+
+Se agrega un método estático para imprimir el tablero

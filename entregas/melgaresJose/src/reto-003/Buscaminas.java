@@ -11,7 +11,7 @@ public class Buscaminas {
         int posx = 0;
         int posy = 0;
         boolean salida = false;
-
+        Scanner scanner = new Scanner(System.in);
         int[][] campoMinado = new int[NUMERO_FILAS][NUMERO_COLUMNAS];
         String[][] tableroJuego = new String[NUMERO_FILAS][NUMERO_COLUMNAS];
 
@@ -21,7 +21,8 @@ public class Buscaminas {
 
 
         while (!salida) {
-
+            
+            imprimirTablero(tableroJuego);
             for (int x = 0; x < tableroJuego.length; x++) {
                 System.out.print("|");
                 for (int y = 0; y < 8; y++) {
@@ -32,14 +33,13 @@ public class Buscaminas {
             }
 
             System.out.println("introduzca posicion X");
-            Scanner sc = new Scanner(System.in);
-            posx = sc.nextInt();
+            
+            posx = scanner.nextInt();
 
             System.out.println("Introduzca posicion Y");
-            Scanner sc2 = new Scanner(System.in);
-            posy = sc.nextInt();
+            posy = scanner.nextInt();
 
-            if ((tablero[posx][posy]) == "  ") {
+            if ((campoMinado[posx][posy]) == 0) {
                 tableroJuego[posx][posy] = "--";
                 celdasVacias++;
             } else {
@@ -100,5 +100,23 @@ public class Buscaminas {
                 campo[i][j] = 0;
             }
         }
+    }
+
+    private static void imprimirTablero(String[][] tablero) {
+        imprimirCabecera(tablero[0].length);
+        for(int i = 0; i < tablero.length; i++) {
+            for(int j = 0; j < tablero[i].length; j++) {
+                System.out.print((i+1) + "|" + tablero[i][j]);
+            }
+            System.out.println();
+        }
+    }
+
+    private static void imprimirCabecera(int columnas) {
+        System.out.print("  ");
+        for(int i = 1; i <= columnas; i++) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
     }
 }
