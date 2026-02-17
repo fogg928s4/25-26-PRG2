@@ -23,3 +23,9 @@ Elimina comentarios innecesarios dentro del código intentando justificar malas 
 ### 🛟 REFACTOR: Colocar Minas
 
 Los bucles consecutivos que se utilizaban para colocar las minas en su posición inicial han sido removidos, y se han reemplazado por un método estático `colocarMinas`. Este realiza un ciclo según la cantidad de minas y les da una posición **X** e **Y** de manera aleatoria.
+
+### 🛟 REFACTOR: Declaración e inicialización de tablero
+
+Este refactor pretende cambiar la forma en la que el campo minado y el tablero de juego interactuán. Para ambos se han creado métodos estáticos para inicializarlos respectivamente. A su vez, el campo minado (anteriormente `tablero`) ha sido cambiado por una matriz de tipo **entero**. Por su parte, el tablero de juego (antes `tablero2`) se mantiene como una matriz de **String**. 
+
+Otro cambio importante, es que se han quitado los números de posición de ambos tableros.
