@@ -13,5 +13,11 @@ class Horario {
 	public void mostrar(Aula aula)
 	public void mostrar(Asignatura asignatura)
 	
-	public void 
+	public void editarAula(DiaHora diaHora, Aula nuevaAula)
+	public void editarDuracion(DiaHora diaHoraInicio, double horas)
+	public void editarDuracion(DiaHora diaHoraInicio, DiaHora diaHoraFin)
+	
+	public boolean estaAulaDisponible(Aula aula, DiaHora diaHora)
+	public boolean estaProfesorDisponible(Profesor profesor, DiaHora diaHora)
+	public boolean estaDiaHoraDisponible(DiaHora diaHora)
 }	
