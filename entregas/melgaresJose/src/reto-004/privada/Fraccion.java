@@ -9,8 +9,11 @@ class Fraccion {
     }
 
     public Fraccion(double numeroEntero) {
-        numerador = numeroEntero;
-        denominador = 1;
+        this(numeroEntero, 1);
+    }
+
+    public Fraccion clonar() {
+        return new Fraccion(numerador,denominador);
     }
 
     public Fraccion multiplicar(Fraccion factor) {
