@@ -3,6 +3,7 @@ class Fraccion {
     private double denominador;
 
     public Fraccion(double numerador, double denominador) {
+        assert denominador != 0 : "El denominador no puede ser 0!";
         this.denominador = denominador;
         this.numerador = numerador;
     }
@@ -29,7 +30,7 @@ class Fraccion {
         double numeradorAux = denominadorAux * (numerador + sumando.numerador);
         return new Fraccion(numeradorAux,denominadorAux); 
     }
-    
+
     double calcularMCD(double  a, double b) {
         while (b != 0) {
             double temporal = b;
