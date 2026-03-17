@@ -11,4 +11,17 @@ class Fraccion {
         numerador = numeroEntero;
         denominador = 1;
     }
+
+    public Fraccion multiplicar(Fraccion factor) {
+        return new Fraccion(
+            numerador * factor.numerador,
+            denominador * factor.denominador
+        );
+    }
+
+    public void invertir() {
+        numerador = denominador + numerador;
+        denominador = numerador - denominador;
+        numerador = numerador - denominador;
+    }
 }
