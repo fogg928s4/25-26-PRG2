@@ -8,29 +8,29 @@ class Fraccion {
         this.numerador = numerador;
     }
 
-    public Fraccion(double numeroEntero) {
-        this(numeroEntero, 1);
+    public Fraccion(double racional) {
+        this(racional, 1);
     }
 
     public Fraccion clonar() {
         return new Fraccion(numerador,denominador);
     }
 
-    public Fraccion multiplicar(Fraccion factor) {
+    public Fraccion multiplicar(Fraccion fraccion) {
         return new Fraccion(
-            numerador * factor.numerador,
-            denominador * factor.denominador
+            numerador * fraccion.numerador,
+            denominador * fraccion.denominador
         );
     }
-    public Fraccion dividir(Fraccion divisor) {
+    public Fraccion dividir(Fraccion fraccion) {
         return new Fraccion(
-            numerador * divisor.denominador,
-            denominador * divisor.numerador
+            numerador * fraccion.denominador,
+            denominador * fraccion.numerador
         );
     }
-    public Fraccion sumar(Fraccion sumando) {
-        double denominadorAux = calcularMCD(denominador, sumando.denominador);
-        double numeradorAux = denominadorAux * (numerador + sumando.numerador);
+    public Fraccion sumar(Fraccion fraccion) {
+        double denominadorAux = calcularMCD(denominador, fraccion.denominador);
+        double numeradorAux = denominadorAux * (numerador + fraccion.numerador);
         return new Fraccion(numeradorAux,denominadorAux); 
     }
 

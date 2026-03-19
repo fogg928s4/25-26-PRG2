@@ -2,15 +2,15 @@ package publica;
 
 public class Fraccion {
     public Fraccion(double numerador, double denominador);
-    public Fraccion(double numeroEntero);
+    public Fraccion(double racional);
 
     public Fraccion(Fraccion fraccion);
 
     public Fraccion clonar();
 
-    public Fraccion dividir(Fraccion divisor);
-    public Fraccion multiplicar();
-    public Fraccion sumar(Fraccion sumando);
+    public Fraccion dividir(Fraccion fraccion);
+    public Fraccion multiplicar(Fraccion fraccion);
+    public Fraccion sumar(Fraccion fraccion);
     double calcularMCD(double  a, double b);
 
     public void invertir();
