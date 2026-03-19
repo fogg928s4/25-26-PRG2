@@ -29,9 +29,9 @@ class Fraccion {
         );
     }
     public Fraccion sumar(Fraccion fraccion) {
-        double denominadorAux = calcularMCD(denominador, fraccion.denominador);
-        double numeradorAux = denominadorAux * (numerador + fraccion.numerador);
-        return new Fraccion(numeradorAux,denominadorAux); 
+        double denominador = calcularMCD(this.denominador, fraccion.denominador);
+        double numerador = denominador * (this.numerador + fraccion.numerador);
+        return new Fraccion(numerador,denominador); 
     }
 
     double calcularMCD(double  a, double b) {
