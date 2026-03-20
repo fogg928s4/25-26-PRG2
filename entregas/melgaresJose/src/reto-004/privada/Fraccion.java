@@ -39,12 +39,7 @@ class Fraccion {
         return new Fraccion(numerador,denominador); 
     }
     public Fraccion restar(Fraccion fraccion) {
-        return this.sumar(
-            new Fraccion(
-                -1*fraccion.numerador, 
-                fraccion.denominador
-            )
-        );
+        return this.sumar(fraccion.oponer());
     }
 
     double calcularMCD(double  a, double b) {
@@ -61,5 +56,7 @@ class Fraccion {
         numerador = numerador - denominador;
     }
 
-
+    public void oponer() {
+        numerador = numerador * -1;
+    }
 }
