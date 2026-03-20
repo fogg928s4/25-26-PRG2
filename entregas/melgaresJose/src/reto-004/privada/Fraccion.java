@@ -38,6 +38,14 @@ class Fraccion {
         double numerador = denominador * (this.numerador + fraccion.numerador);
         return new Fraccion(numerador,denominador); 
     }
+    public Fraccion restar(Fraccion fraccion) {
+        return this.sumar(
+            new Fraccion(
+                -1*fraccion.numerador, 
+                fraccion.denominador
+            )
+        );
+    }
 
     double calcularMCD(double  a, double b) {
         while (b != 0) {

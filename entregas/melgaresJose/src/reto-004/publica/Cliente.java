@@ -12,6 +12,7 @@ public class Cliente {
     public Fraccion dividir(Fraccion fraccion);
     public Fraccion multiplicar(Fraccion fraccion);
     public Fraccion sumar(Fraccion fraccion);
+    public Fraccion restart(Fraccion fraccion);
 
     public void invertir();
     public void oponer();
