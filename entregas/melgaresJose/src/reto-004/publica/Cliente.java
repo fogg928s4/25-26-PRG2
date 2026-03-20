@@ -1,6 +1,6 @@
 package publica;
 
-public class Fraccion {
+public class Cliente {
     public Fraccion(double numerador, double denominador);
     public Fraccion(double racional);
 
