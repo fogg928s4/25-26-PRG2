@@ -27,6 +27,9 @@ class Fraccion {
             denominador * fraccion.denominador
         );
     }
+    public Fraccion multiplicar(double numero) {
+        return new Fraccion(numerador * numero, denominador);
+    }
     public Fraccion dividir(Fraccion fraccion) {
         return new Fraccion(
             numerador * fraccion.denominador,
