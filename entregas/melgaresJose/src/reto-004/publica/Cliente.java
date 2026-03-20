@@ -7,11 +7,11 @@ public class Cliente {
     public Fraccion(Fraccion fraccion);
 
     public Fraccion clonar();
+    public Fraccion mostrar();
 
     public Fraccion dividir(Fraccion fraccion);
     public Fraccion multiplicar(Fraccion fraccion);
     public Fraccion sumar(Fraccion fraccion);
-    double calcularMCD(double  a, double b);
 
     public void invertir();
     public void oponer();

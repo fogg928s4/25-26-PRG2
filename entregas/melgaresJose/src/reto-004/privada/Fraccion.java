@@ -15,6 +15,11 @@ class Fraccion {
     public Fraccion clonar() {
         return new Fraccion(numerador,denominador);
     }
+    public void mostrar() {
+        Console.writeln(numerador);
+        Console.writeln("--------");
+        Console.writeln(denominador);
+    }
 
     public Fraccion multiplicar(Fraccion fraccion) {
         return new Fraccion(
