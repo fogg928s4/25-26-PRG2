@@ -1,5 +1,7 @@
 class Juego {
     public static void main(String[] args) {
-        new Carrera.jugar();
+        Carrera carrera = new Carrera();
+
+        carrera.jugar();
     }
 }
