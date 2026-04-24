@@ -7,20 +7,34 @@ class Carrera {
     int turno;
 
     public Carrera() {
-        pistaJuego = new Pista(40);
+        competidores = new Caballo[NUMERO_PARTICIPANTES];
         for(int i = 0; i < NUMERO_PARTICIPANTES ; i++) {
             competidores[i] = new Caballo();
         }
-        turno = 1;
+        pistaJuego = new Pista(40);
+        turno = 0;
     }
 
     public void jugar() {
-        mostrarTurno();
-        pistaJuego.dibujar();       
-        competidores[0].mostarAvance();
+        do {
+            mostrarTurno();
+            pistaJuego.dibujar();
+            competidores[turno].mostarAvance();
+            avanzarTurno();
+        } while(turno !=0);
+        
+        
     }
 
     private void mostrarTurno() {
         System.out.println("Turno " + turno + "!!!");
     }
+    private void avanzarTurno() {
+        turno++;
+        if(turno == NUMERO_PARTICIPANTES) {
+            turno = 0;
+        }
+    }
+
+
 }
