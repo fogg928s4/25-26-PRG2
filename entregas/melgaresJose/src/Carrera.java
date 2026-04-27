@@ -1,5 +1,6 @@
 class Carrera {
     final int NUMERO_PARTICIPANTES = 3;
+    private final int LONGITUD_CARRERA = 40;
 
     Pista pistaJuego;
     Caballo[] competidores;
@@ -7,34 +8,34 @@ class Carrera {
     int turno;
 
     public Carrera() {
-        competidores = new Caballo[NUMERO_PARTICIPANTES];
-        for(int i = 0; i < NUMERO_PARTICIPANTES ; i++) {
-            competidores[i] = new Caballo();
-        }
-        pistaJuego = new Pista(40);
+        prepararCompetidores();
+        pistaJuego = new Pista(LONGITUD_CARRERA, competidores);
         turno = 0;
+        hayGanador = false;
     }
-
+    
     public void jugar() {
         do {
             mostrarTurno();
             pistaJuego.dibujar();
-            competidores[turno].mostarAvance();
+            hayGanador = pistaJuego.hayGanador();
             avanzarTurno();
-        } while(turno !=0);
-        
-        
+        } while(!hayGanador);    
     }
-
-    private void mostrarTurno() {
-        System.out.println("Turno " + turno + "!!!");
-    }
-    private void avanzarTurno() {
-        turno++;
-        if(turno == NUMERO_PARTICIPANTES) {
-            turno = 0;
+    
+    private void  prepararCompetidores() {
+        String[] nombres = {"Huevo", "Queso", "Leche"};
+        competidores = new Caballo[NUMERO_PARTICIPANTES];
+        for(int i = 0; i < NUMERO_PARTICIPANTES ; i++) {
+            competidores[i] = new Caballo(nombres[i]);
         }
     }
 
+    private void mostrarTurno() {
+        System.out.println("Turno #" + turno + "!!!");
+    }
 
+    private void avanzarTurno() {
+        turno++;
+    } 
 }

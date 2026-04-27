@@ -2,19 +2,19 @@ class Caballo {
     
     private final int AVANCE_MAXIMO = 3;
     private int posicion;
+    private String nombre;
 
-    public Caballo() {
+    public Caballo(String nombre) {
         posicion = 0;
+        this.nombre = nombre;
     }
-    public void mostarAvance() {
-        moverse();
-        String vacio = " ";
+    public void dibujar(int avance) {
         String caballoASCII = ";-;`";
-        System.out.println(vacio.repeat(posicion) + caballoASCII);
+        String vacio = " ".repeat(avance);
+        System.out.println(nombre + "|"+ vacio + caballoASCII);
     }
-    private void moverse() {
-        int avance = determinarAvance();
-        posicion += avance;
+    public int moverse() {
+        return determinarAvance();
     }
 
     private int determinarAvance() {
