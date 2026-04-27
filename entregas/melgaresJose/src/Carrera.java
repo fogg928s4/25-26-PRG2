@@ -17,6 +17,7 @@ class Carrera {
     public void jugar() {
         do {
             mostrarTurno();
+            pistaJuego.avanzarCompetidores();
             pistaJuego.dibujar();
             hayGanador = pistaJuego.hayGanador();
             avanzarTurno();

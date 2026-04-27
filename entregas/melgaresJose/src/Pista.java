@@ -14,14 +14,33 @@ class Pista {
             posiciones[i] = 0;
         }
     }
+
     public void dibujar() {
-        for(int i = 0; i < longitud; i++) {
-            System.out.print("-");
+        final String bordePista = "+";
+        System.out.println(bordePista.repeat(longitud + 3));
+        dibujarCompetidores();
+        System.out.println(bordePista.repeat(longitud + 3));
+
+    }
+
+    public void avanzarCompetidores() {
+        for(int i = 0; i < competidores.length; i++) {
+            posiciones[i] += competidores[i].moverse();
         }
-        System.out.println();
+    }
+
+    private void dibujarCompetidores() {
+        for(int i = 0; i < competidores.length; i++) {
+            competidores[i].dibujar(posiciones[i]);
+        }
     }
 
     public boolean hayGanador() {
-        return competidores[0].posicion >= longitud;
+        for(int i = 0; i < competidores.length; i++) {
+            if(posiciones[i] >= longitud) {
+                return true;
+            }
+        }
+        return false;
     }
 }
