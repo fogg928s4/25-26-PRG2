@@ -49,20 +49,6 @@ public class Baraja {
         return cartas[ultima-1];
     }
 
-    public void moverA(Descarte descarte) {
-        if (this.vacia()) {
-            console.writeln("No hay cartas!!!");
-        } else {
-            int contador = 3;
-            while (contador > 0 && !this.vacia()) {
-                Carta carta = this.sacar();
-                carta.voltear();
-                descarte.poner(carta);
-                contador--;
-            }
-        }
-    }
-
     public Carta sacar() {
         assert !vacia();
         ultima--;

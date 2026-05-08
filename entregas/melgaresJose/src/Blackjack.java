@@ -3,17 +3,20 @@ class Blackjack {
     private int puntaje;
     private Baraja baraja;
     private Mano mano;
+    private int CANTIDAD_INICIAL = 2;
 
     public Blackjack() {
         console = new Console();
         puntaje = 0;
         baraja = new Baraja();
         mano = new Mano();
+        repartir();
     }
 
     private int obtenerPuntaje() {
         return 0;
     }
+
     private void jugar() {
         Menu menu = new Menu();
 
@@ -24,13 +27,22 @@ class Blackjack {
             this.mostrarTapete();
             menu.mostrar();
             switch (menu.pedirOpcion()) {
-                case 1 -> console.writeln("opcion 1");
-                case 2 -> console.writeln("opcion2");
+                case 1 -> mano.pedirCarta(baraja);
+                case 2 -> reiniciar();
                 case 3 -> estaJugando = false;
             }
             haPerdido = this.seHaPasado();
         } while (estaJugando && !haPerdido);
-        console.writeln((!haPerdido ? "NO " : "") + "GANASTE");
+        console.writeln((haPerdido ? "NO " : "") + "GANASTE");
+    }
+
+    private void repartir() {
+        for(int i = 0; i < CANTIDAD_INICIAL; i++) {
+            mano.pedirCarta(baraja);
+        }
+    }
+    private void reiniciar() {
+
     }
 
     private boolean seHaPasado() {
