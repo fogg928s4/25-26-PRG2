@@ -14,7 +14,7 @@ class Blackjack {
     }
 
     private int obtenerPuntaje() {
-        return 0;
+        return mano.contarPuntos();
     }
 
     private void jugar() {
@@ -31,6 +31,7 @@ class Blackjack {
                 case 2 -> reiniciar();
                 case 3 -> estaJugando = false;
             }
+            puntaje = this.obtenerPuntaje();
             haPerdido = this.seHaPasado();
         } while (estaJugando && !haPerdido);
         console.writeln((haPerdido ? "NO " : "") + "GANASTE");
@@ -56,14 +57,15 @@ class Blackjack {
     
     private void mostrarTapete() {
         console.cleanScreen();
-        baraja.mostrar();
+        mano.mostrar();
         this.linea();
-
-        this.linea();
-        
+        this.mostrarPuntaje();
         this.linea();
     }
 
+    private void mostrarPuntaje() {
+        console.writeln("Puntaje: " + puntaje);
+    }
     private void linea() {
         console.writeln("-".repeat(30));
     }

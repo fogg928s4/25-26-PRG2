@@ -35,7 +35,7 @@ public class Carta {
     private boolean esRey() {
         return numero >= 9;
     }
-    private boolean esAs() {
+    public boolean esAs() {
         return numero==0;
     }
 
