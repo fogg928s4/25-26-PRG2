@@ -41,8 +41,12 @@ class Blackjack {
             mano.pedirCarta(baraja);
         }
     }
-    private void reiniciar() {
 
+    private void reiniciar() {
+        puntaje = 0;
+        baraja = new Baraja();
+        mano = new Mano();
+        repartir();
     }
 
     private boolean seHaPasado() {
